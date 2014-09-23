@@ -1,0 +1,1 @@
+INSERT INTO university.UniversityUser (id, userName, password, privilege) VALUES (1, 'testUser', 'testPassword', 'ROLE_ADMIN');

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/jdbc
+       http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd">
+	<!--
+	<jdbc:initialize-database>
+    	<jdbc:script location="classpath:import.sql"/>
+    </jdbc:initialize-database>
+    
+	-->
+
+	<bean id="sessionFactory"
+    		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+      <property name="dataSource" ref="dataSource" />
+      <property name="packagesToScan" value="university.dataobjects" />
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.hbm2ddl.auto">create</prop>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+         </props>
+      </property>
+   	</bean>
+	
+	
+	<bean id="transactionManager"
+    	class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+      <property name="sessionFactory" ref="sessionFactory" />
+   </bean>
+	
+	<bean id="dataSource"
+			class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/university?useUnicode=true&amp;characterEncoding=utf8" />
+		<property name="username" value="university" />
+		<property name="password" value="f4k390fkf9" />
+		<property name="initialSize" value="2" />
+		<property name="maxActive" value="5" />
+		<property name="testOnBorrow" value="true" />
+		<property name="validationQuery" value="select 1" />
+	</bean>
+       
+       
+       
+</beans>

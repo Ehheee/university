@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:StudentCourse xmlns:ns2="StudentCourse" xmlns:ns3="Course"><studentId>student1</studentId><courseId>course1</courseId><status>completed</status><grade>5</grade></ns2:StudentCourse>

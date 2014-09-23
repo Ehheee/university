@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><records xmlns:ns2="Student" xmlns:ns3="Course" xmlns:ns4="StudentCourse"><ns3:Course><id>1</id><version>0</version><name>Ajalugu</name></ns3:Course><ns3:Course><id>2</id><version>0</version><name>Matemaatika</name></ns3:Course></records>
